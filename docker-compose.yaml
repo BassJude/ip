@@ -1,0 +1,14 @@
+version: "3.3"
+services:
+  ip-service:
+    build:
+      context: ./
+      dockerfile: config/dev/Dockerfile
+      target: dynamic
+    container_name: ip-service
+    volumes:
+    - .:/var/www/ip
+    ports:
+    - 8002:8000
+    restart: always
+
